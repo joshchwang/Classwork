@@ -37,3 +37,5 @@ def draw():
     ellipse(z + 25, 200, 50, 50)
     ellipse(z - 25, 200, 50, 50)
     ellipse(z + 50, 200, 50, 50)
+    
+    fill(0, 255, 0)
