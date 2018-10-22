@@ -39,3 +39,5 @@ def draw():
     ellipse(z + 50, 200, 50, 50)
     
     fill(0, 255, 0)
+    rect(0, 300, 3000, 0)
+    #idk what im doing pls help
