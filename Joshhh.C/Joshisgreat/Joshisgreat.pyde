@@ -1,45 +1,44 @@
 sun = 0
 cloud1 = 0
 cloud2 = 0
-moon = -500
+moon = 0
 #sicloud2e of window
 def setup():
   size(500,500)
 #main
 def draw():
+    if sun >= 0:
+        fill("#87CEEB")
+        rect(0, 0, 500, 500)
+    if moon >= 500:
+        fill(0)
+        rect(0, 0, 500, 500)
     global sun, cloud1, cloud2, moon
     noStroke()
-    sun += 0.5
     cloud1 += 1.1
     cloud2 += 1.5
-    moon += 0.5
     print(sun)
-    if sun > 1000:
-        sun = -100
-    elif cloud1 > 625:
+    if cloud1 > 625:
         cloud1 = -50
-    elif cloud2 > 635:
+    if cloud2 > 635:
         cloud2 = -25
-    else:
-        if sun >= 250:
-            #sunset colour
-            background('#fd5e53')
-            ellipse(sun, 50, 100, 100)
-            #the moon :)
-        elif sun >= 550:
-            background(0)
-            sun = -550
-            fill(225)
-            ellipse(moon - 10, 50, 100, 100)
-            fill(0)
-            ellipse(moon, 50, 100, 100)
-        elif moon >= 550:
-            background('#87CEEB')
-            ellipse(sun, 50, 100, 100)
-            moon = 1
+        
+    fill('#FDB813')
+    ellipse(sun, 50, 100, 100)
+    if sun >= 550:
+        sun = -500
+    sun += 1
+    fill(255)
+    ellipse(moon-575, 50, 100, 100)
+    fill(0)
+    ellipse(moon - 550, 50, 100, 100)
+    if moon >= 1000:
+        moon = -50
+    moon += 1
+        
+        
         
     #sky blue
-    background('#87CEEB')
     fill('#FFFF4D')
     #the sun
     ellipse(sun, 50, 100, 100)
@@ -102,3 +101,4 @@ def draw():
     ellipse(130, 290, 30, 30)
     ellipse(115, 290, 30, 30)
     ellipse(115, 285, 30, 30)
+         
